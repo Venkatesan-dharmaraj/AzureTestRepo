@@ -10,8 +10,12 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: Maven@3
+- task: Maven@3,
+ archiveFilePatterns: '*.zip'
+    destinationFolder: '$(Build.SourcesDirectory)'
+    cleanDestinationFolder: false
   inputs:
+      mavenPomFile: '$(System.DefaultWorkingDirectory)/{zip file name}/pipelines-java-function-master/pom.xml'
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'

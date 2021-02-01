@@ -15,7 +15,6 @@ steps:
     destinationFolder: '$(Build.SourcesDirectory)'
     cleanDestinationFolder: false
   inputs:
-      mavenPomFile: '$(System.DefaultWorkingDirectory)/{zip file name}/pipelines-java-function-master/pom.xml'
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
